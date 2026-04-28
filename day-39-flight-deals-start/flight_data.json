@@ -1,0 +1,1690 @@
+null{
+    "search_metadata": {
+        "id": "69efd086f2593afbc74975b4",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/F_Lve0L9sRmTCXFJOFFHHg/69efd086f2593afbc74975b4.json",
+        "created_at": "2026-04-27 21:09:26 UTC",
+        "processed_at": "2026-04-27 21:09:26 UTC",
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=EUR&tfs=CBwQAhonEgoyMDI2LTA0LTI4agcIARIDQU1TagcIARIDRUlOcgcIARIDSEtHGicSCjIwMjYtMTAtMjVqBwgBEgNIS0dyBwgBEgNBTVNyBwgBEgNFSU5AAUgBcAGYAQE&tfu=EgIIAQ",
+        "raw_html_file": "https://serpapi.com/searches/F_Lve0L9sRmTCXFJOFFHHg/69efd086f2593afbc74975b4.html",
+        "prettify_html_file": "https://serpapi.com/searches/F_Lve0L9sRmTCXFJOFFHHg/69efd086f2593afbc74975b4.prettify",
+        "total_time_taken": 16.99
+    },
+    "search_parameters": {
+        "engine": "google_flights",
+        "hl": "en",
+        "gl": "us",
+        "type": "1",
+        "departure_id": "AMS,EIN",
+        "arrival_id": "HKG",
+        "outbound_date": "2026-04-28",
+        "return_date": "2026-10-25",
+        "adults": 1,
+        "currency": "EUR"
+    },
+    "best_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 18:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Frankfurt Airport",
+                        "id": "FRA",
+                        "time": "2026-04-28 19:40"
+                    },
+                    "duration": 70,
+                    "airplane": "Airbus A319",
+                    "airline": "Lufthansa",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LH 997",
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "Wi-Fi for a fee",
+                        "Carbon emissions estimate: 68 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Frankfurt Airport",
+                        "id": "FRA",
+                        "time": "2026-04-28 21:40"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 15:20"
+                    },
+                    "duration": 700,
+                    "airplane": "Boeing 787",
+                    "airline": "Lufthansa",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LH 796",
+                    "ticket_also_sold_by": [
+                        "Cathay Pacific"
+                    ],
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 532 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 120,
+                    "name": "Frankfurt Airport",
+                    "id": "FRA"
+                }
+            ],
+            "total_duration": 890,
+            "carbon_emissions": {
+                "this_flight": 601000,
+                "typical_for_this_route": 632000,
+                "difference_percent": -5
+            },
+            "price": 1067,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3RNU0RrNU4zeE1TRGM1TmhvTENJTEJCaEFDR2dORlZWSTRISEMyMEFjPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkZSQSIsbnVsbCwiTEgiLCI5OTciXSxbIkZSQSIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIkxIIiwiNzk2Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 20:05"
+                    },
+                    "arrival_airport": {
+                        "name": "Zurich Airport",
+                        "id": "ZRH",
+                        "time": "2026-04-28 21:30"
+                    },
+                    "duration": 85,
+                    "airplane": "Airbus A220-300 Passenger",
+                    "airline": "SWISS",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LX 735",
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "Carbon emissions estimate: 81 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Zurich Airport",
+                        "id": "ZRH",
+                        "time": "2026-04-28 22:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 16:35"
+                    },
+                    "duration": 725,
+                    "airplane": "Boeing 777",
+                    "airline": "SWISS",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LX 138",
+                    "ticket_also_sold_by": [
+                        "Cathay Pacific"
+                    ],
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 644 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 60,
+                    "name": "Zurich Airport",
+                    "id": "ZRH"
+                }
+            ],
+            "total_duration": 870,
+            "carbon_emissions": {
+                "this_flight": 726000,
+                "typical_for_this_route": 632000,
+                "difference_percent": 15
+            },
+            "price": 1069,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LX.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3RNV0Rjek5YeE1XREV6T0JvTENOUENCaEFDR2dORlZWSTRISENyMGdjPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIlpSSCIsbnVsbCwiTFgiLCI3MzUiXSxbIlpSSCIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIkxYIiwiMTM4Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 20:20"
+                    },
+                    "arrival_airport": {
+                        "name": "Paris Charles de Gaulle Airport",
+                        "id": "CDG",
+                        "time": "2026-04-28 21:50"
+                    },
+                    "duration": 90,
+                    "airplane": "Airbus A320",
+                    "airline": "Air France",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+                    "travel_class": "Economy",
+                    "flight_number": "AF 1441",
+                    "ticket_also_sold_by": [
+                        "KLM"
+                    ],
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "Carbon emissions estimate: 56 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Paris Charles de Gaulle Airport",
+                        "id": "CDG",
+                        "time": "2026-04-28 23:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 17:40"
+                    },
+                    "duration": 730,
+                    "airplane": "Airbus A350",
+                    "airline": "Air France",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+                    "travel_class": "Economy",
+                    "flight_number": "AF 188",
+                    "ticket_also_sold_by": [
+                        "KLM"
+                    ],
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 527 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 100,
+                    "name": "Paris Charles de Gaulle Airport",
+                    "id": "CDG"
+                }
+            ],
+            "total_duration": 920,
+            "carbon_emissions": {
+                "this_flight": 584000,
+                "typical_for_this_route": 632000,
+                "difference_percent": -8
+            },
+            "price": 1108,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3hCUmpFME5ERjhRVVl4T0RnYUN3anU0QVlRQWhvRFJWVlNPQnh3My9VSCIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkNERyIsbnVsbCwiQUYiLCIxNDQxIl0sWyJDREciLCIyMDI2LTA0LTI4IiwiSEtHIixudWxsLCJBRiIsIjE4OCJdXV0="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 21:15"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 15:25"
+                    },
+                    "duration": 730,
+                    "airplane": "Boeing 787",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 887",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 532 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "total_duration": 730,
+            "carbon_emissions": {
+                "this_flight": 533000,
+                "typical_for_this_route": 632000,
+                "difference_percent": -16
+            },
+            "price": 1131,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ1ZMVERnNE54b0xDSS96QmhBQ0dnTkZWVkk0SEhDVGl3Zz0iLFtbIkFNUyIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIktMIiwiODg3Il1dXQ=="
+        }
+    ],
+    "other_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 17:50"
+                    },
+                    "arrival_airport": {
+                        "name": "Paris Charles de Gaulle Airport",
+                        "id": "CDG",
+                        "time": "2026-04-28 19:05"
+                    },
+                    "duration": 75,
+                    "airplane": "Boeing 737",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 1411",
+                    "ticket_also_sold_by": [
+                        "Air France"
+                    ],
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Carbon emissions estimate: 51 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Paris Charles de Gaulle Airport",
+                        "id": "CDG",
+                        "time": "2026-04-28 23:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 17:40"
+                    },
+                    "duration": 730,
+                    "airplane": "Airbus A350",
+                    "airline": "Air France",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AF.png",
+                    "travel_class": "Economy",
+                    "flight_number": "AF 188",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 527 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 265,
+                    "name": "Paris Charles de Gaulle Airport",
+                    "id": "CDG"
+                }
+            ],
+            "total_duration": 1070,
+            "carbon_emissions": {
+                "this_flight": 579000,
+                "typical_for_this_route": 632000,
+                "difference_percent": -8
+            },
+            "price": 1108,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3hMVERFME1URjhRVVl4T0RnYUN3anU0QVlRQWhvRFJWVlNPQnh3My9VSCIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkNERyIsbnVsbCwiS0wiLCIxNDExIl0sWyJDREciLCIyMDI2LTA0LTI4IiwiSEtHIixudWxsLCJBRiIsIjE4OCJdXV0="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 10:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Frankfurt Airport",
+                        "id": "FRA",
+                        "time": "2026-04-28 11:10"
+                    },
+                    "duration": 70,
+                    "airplane": "Airbus A321",
+                    "airline": "Lufthansa",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/LH.png",
+                    "travel_class": "Economy",
+                    "flight_number": "LH 987",
+                    "legroom": "29 in",
+                    "extensions": [
+                        "Below average legroom (29 in)",
+                        "In-seat USB outlet",
+                        "Carbon emissions estimate: 51 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Frankfurt Airport",
+                        "id": "FRA",
+                        "time": "2026-04-28 13:40"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 07:20"
+                    },
+                    "duration": 700,
+                    "airplane": "Boeing 777",
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "CX 288",
+                    "ticket_also_sold_by": [
+                        "Lufthansa"
+                    ],
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 610 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 150,
+                    "name": "Frankfurt Airport",
+                    "id": "FRA"
+                }
+            ],
+            "total_duration": 920,
+            "carbon_emissions": {
+                "this_flight": 662000,
+                "typical_for_this_route": 632000,
+                "difference_percent": 5
+            },
+            "price": 1138,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3RNU0RrNE4zeERXREk0T0JvTENMVDRCaEFDR2dORlZWSTRISENza1FnPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkZSQSIsbnVsbCwiTEgiLCI5ODciXSxbIkZSQSIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIkNYIiwiMjg4Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Eindhoven Airport",
+                        "id": "EIN",
+                        "time": "2026-04-28 16:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 18:00"
+                    },
+                    "duration": 120,
+                    "airplane": "Bus",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 318"
+                },
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 21:15"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 15:25"
+                    },
+                    "duration": 730,
+                    "airplane": "Boeing 787",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 887",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 532 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 195,
+                    "name": "Amsterdam Airport Schiphol",
+                    "id": "AMS"
+                }
+            ],
+            "total_duration": 1045,
+            "carbon_emissions": {
+                "typical_for_this_route": 632000
+            },
+            "price": 1164,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ3RMVERNeE9IeExURGc0TnhvTENLV05CeEFDR2dORlZWSTRISERwcVFnPSIsW1siRUlOIiwiMjAyNi0wNC0yOCIsIkFNUyIsbnVsbCwiS0wiLCIzMTgiXSxbIkFNUyIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIktMIiwiODg3Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 12:20"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 06:10"
+                    },
+                    "duration": 710,
+                    "airplane": "Airbus A350",
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "CX 270",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 543 kg"
+                    ],
+                    "overnight": true,
+                    "often_delayed_by_over_30_min": true
+                }
+            ],
+            "total_duration": 710,
+            "carbon_emissions": {
+                "this_flight": 543000,
+                "typical_for_this_route": 632000,
+                "difference_percent": -14
+            },
+            "price": 1552,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+            "departure_token": "WyJDalJJT0ZOT05VbGZYMXBwWjNkQlFUVmxObmRDUnkwdExTMHRMWFozYm5reE1DMXVNa0ZCUVVGQlIyNTJNRWwzUm1aeGNIbEJFZ1ZEV0RJM01Cb0xDSkc4Q1JBQ0dnTkZWVkk0SEhEbmpBcz0iLFtbIkFNUyIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIkNYIiwiMjcwIl1dXQ=="
+        }
+    ],
+    "airports": [
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "HKG",
+                        "name": "Hong Kong International Airport"
+                    },
+                    "city": "Hong Kong",
+                    "country": "Hong Kong",
+                    "country_code": "HK",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTw4hL1mr5guduTOGdOZwJz3LPKCJ8gVMJLLysC52ardcvQF9spfxCgjmth1tgFQt9LV8udbc5Sx0Gl0w",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMxMT46WfJjHYcOn3hqaJwQlDG9VSOAYYXPljq4w715PQkzgI3hblNxB_Ti-7Fbd5PlijETzi2xeiOC0Sno3Ya2EjCFZy6rGgWLo1Y1Y4"
+                }
+            ]
+        },
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "HKG",
+                        "name": "Hong Kong International Airport"
+                    },
+                    "city": "Hong Kong",
+                    "country": "Hong Kong",
+                    "country_code": "HK",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTw4hL1mr5guduTOGdOZwJz3LPKCJ8gVMJLLysC52ardcvQF9spfxCgjmth1tgFQt9LV8udbc5Sx0Gl0w",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMxMT46WfJjHYcOn3hqaJwQlDG9VSOAYYXPljq4w715PQkzgI3hblNxB_Ti-7Fbd5PlijETzi2xeiOC0Sno3Ya2EjCFZy6rGgWLo1Y1Y4"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ]
+        }
+    ]
+}{
+    "search_metadata": {
+        "id": "69efd09afda60763b38f64ca",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/kstwTJdk_ccbfOR4F--Ufw/69efd09afda60763b38f64ca.json",
+        "created_at": "2026-04-27 21:09:46 UTC",
+        "processed_at": "2026-04-27 21:09:46 UTC",
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=EUR&tfs=CBwQAhonEgoyMDI2LTA0LTI4agcIARIDQU1TagcIARIDRUlOcgcIARIDS1VMGicSCjIwMjYtMTAtMjVqBwgBEgNLVUxyBwgBEgNBTVNyBwgBEgNFSU5AAUgBcAGYAQE&tfu=EgIIAQ",
+        "raw_html_file": "https://serpapi.com/searches/kstwTJdk_ccbfOR4F--Ufw/69efd09afda60763b38f64ca.html",
+        "prettify_html_file": "https://serpapi.com/searches/kstwTJdk_ccbfOR4F--Ufw/69efd09afda60763b38f64ca.prettify",
+        "total_time_taken": 7.62
+    },
+    "search_parameters": {
+        "engine": "google_flights",
+        "hl": "en",
+        "gl": "us",
+        "type": "1",
+        "departure_id": "AMS,EIN",
+        "arrival_id": "KUL",
+        "outbound_date": "2026-04-28",
+        "return_date": "2026-10-25",
+        "adults": 1,
+        "currency": "EUR"
+    },
+    "best_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 20:35"
+                    },
+                    "arrival_airport": {
+                        "name": "Muscat International Airport",
+                        "id": "MCT",
+                        "time": "2026-04-29 05:40"
+                    },
+                    "duration": 425,
+                    "airplane": "Boeing 787",
+                    "airline": "Oman Air",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WY.png",
+                    "travel_class": "Economy",
+                    "flight_number": "WY 172",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 327 kg"
+                    ],
+                    "overnight": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Muscat International Airport",
+                        "id": "MCT",
+                        "time": "2026-04-29 08:45"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 20:05"
+                    },
+                    "duration": 440,
+                    "airplane": "Boeing 737",
+                    "airline": "Oman Air",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WY.png",
+                    "travel_class": "Economy",
+                    "flight_number": "WY 823",
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 436 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 185,
+                    "name": "Muscat International Airport",
+                    "id": "MCT"
+                }
+            ],
+            "total_duration": 1050,
+            "carbon_emissions": {
+                "this_flight": 765000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 13
+            },
+            "price": 975,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/WY.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RYV1RFM01ueFhXVGd5TXhvTENKRDVCUkFDR2dORlZWSTRISENVL0FZPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIk1DVCIsbnVsbCwiV1kiLCIxNzIiXSxbIk1DVCIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIldZIiwiODIzIl1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 20:35"
+                    },
+                    "arrival_airport": {
+                        "name": "Indira Gandhi International Airport",
+                        "id": "DEL",
+                        "time": "2026-04-29 09:55"
+                    },
+                    "duration": 590,
+                    "airplane": "Boeing 787",
+                    "airline": "Air India",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+                    "travel_class": "Economy",
+                    "flight_number": "AI 156",
+                    "legroom": "33 in",
+                    "extensions": [
+                        "Above average legroom (33 in)",
+                        "In-seat power & USB outlets",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 446 kg"
+                    ],
+                    "overnight": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Indira Gandhi International Airport",
+                        "id": "DEL",
+                        "time": "2026-04-29 13:40"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 21:40"
+                    },
+                    "duration": 330,
+                    "airplane": "Airbus A320neo",
+                    "airline": "Air India",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+                    "travel_class": "Economy",
+                    "flight_number": "AI 2384",
+                    "legroom": "28 in",
+                    "extensions": [
+                        "Below average legroom (28 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 281 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 225,
+                    "name": "Indira Gandhi International Airport",
+                    "id": "DEL"
+                }
+            ],
+            "total_duration": 1145,
+            "carbon_emissions": {
+                "this_flight": 729000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 8
+            },
+            "price": 1022,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/AI.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3hCU1RFMU5ueEJTVEl6T0RRYUN3anVuUVlRQWhvRFJWVlNPQnh3bTZjSCIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkRFTCIsbnVsbCwiQUkiLCIxNTYiXSxbIkRFTCIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIkFJIiwiMjM4NCJdXV0="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 16:40"
+                    },
+                    "arrival_airport": {
+                        "name": "Hamad International Airport",
+                        "id": "DOH",
+                        "time": "2026-04-29 00:45"
+                    },
+                    "duration": 425,
+                    "airplane": "Airbus A350",
+                    "airline": "Qatar Airways",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                    "travel_class": "Economy",
+                    "flight_number": "QR 274",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 364 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Hamad International Airport",
+                        "id": "DOH",
+                        "time": "2026-04-29 03:05"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 15:45"
+                    },
+                    "duration": 460,
+                    "airplane": "Boeing 777",
+                    "airline": "Qatar Airways",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                    "travel_class": "Economy",
+                    "flight_number": "QR 852",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 449 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 140,
+                    "name": "Hamad International Airport",
+                    "id": "DOH",
+                    "overnight": true
+                }
+            ],
+            "total_duration": 1025,
+            "carbon_emissions": {
+                "this_flight": 814000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 20
+            },
+            "price": 1141,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RSVWpJM05IeFJVamcxTWhvTENKTDdCaEFDR2dORlZWSTRISERHbEFnPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkRPSCIsbnVsbCwiUVIiLCIyNzQiXSxbIkRPSCIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIlFSIiwiODUyIl1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 10:20"
+                    },
+                    "arrival_airport": {
+                        "name": "Zayed International Airport",
+                        "id": "AUH",
+                        "time": "2026-04-28 19:55"
+                    },
+                    "duration": 455,
+                    "airplane": "Boeing 787-10",
+                    "airline": "Etihad",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                    "travel_class": "Economy",
+                    "flight_number": "EY 44",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 288 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Zayed International Airport",
+                        "id": "AUH",
+                        "time": "2026-04-28 21:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 08:25"
+                    },
+                    "duration": 445,
+                    "airplane": "Boeing 787",
+                    "airline": "Etihad",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+                    "travel_class": "Economy",
+                    "flight_number": "EY 488",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 327 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 65,
+                    "name": "Zayed International Airport",
+                    "id": "AUH"
+                }
+            ],
+            "total_duration": 965,
+            "carbon_emissions": {
+                "this_flight": 617000,
+                "typical_for_this_route": 677000,
+                "difference_percent": -9
+            },
+            "price": 1188,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EY.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3BGV1RRMGZFVlpORGc0R2dzSXdKOEhFQUlhQTBWVlVqZ2NjSmEvQ0E9PSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkFVSCIsbnVsbCwiRVkiLCI0NCJdLFsiQVVIIiwiMjAyNi0wNC0yOCIsIktVTCIsbnVsbCwiRVkiLCI0ODgiXV1d"
+        }
+    ],
+    "other_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 22:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Hamad International Airport",
+                        "id": "DOH",
+                        "time": "2026-04-29 06:35"
+                    },
+                    "duration": 425,
+                    "airplane": "Airbus A350",
+                    "airline": "Qatar Airways",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                    "travel_class": "Economy",
+                    "flight_number": "QR 284",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 364 kg"
+                    ],
+                    "overnight": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Hamad International Airport",
+                        "id": "DOH",
+                        "time": "2026-04-29 09:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 21:40"
+                    },
+                    "duration": 460,
+                    "airplane": "Boeing 777",
+                    "airline": "Qatar Airways",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+                    "travel_class": "Economy",
+                    "flight_number": "QR 848",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Free Wi-Fi",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 449 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 145,
+                    "name": "Hamad International Airport",
+                    "id": "DOH"
+                }
+            ],
+            "total_duration": 1030,
+            "carbon_emissions": {
+                "this_flight": 814000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 20
+            },
+            "price": 1141,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/QR.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RSVWpJNE5IeFJVamcwT0JvTENKTDdCaEFDR2dORlZWSTRISERHbEFnPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkRPSCIsbnVsbCwiUVIiLCIyODQiXSxbIkRPSCIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIlFSIiwiODQ4Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Eindhoven Airport",
+                        "id": "EIN",
+                        "time": "2026-04-28 16:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 18:00"
+                    },
+                    "duration": 120,
+                    "airplane": "Bus",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 318"
+                },
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 21:00"
+                    },
+                    "arrival_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2026-04-29 15:40"
+                    },
+                    "duration": 760,
+                    "airplane": "Boeing 777",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 835",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 656 kg"
+                    ],
+                    "overnight": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Singapore Changi Airport",
+                        "id": "SIN",
+                        "time": "2026-04-29 18:15"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 19:25"
+                    },
+                    "duration": 70,
+                    "airplane": "Boeing 737",
+                    "airline": "Malaysia Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/MH.png",
+                    "travel_class": "Economy",
+                    "flight_number": "MH 7232",
+                    "legroom": "30 in",
+                    "extensions": [
+                        "Average legroom (30 in)",
+                        "In-seat USB outlet",
+                        "Stream media to your device",
+                        "Carbon emissions estimate: 50 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 180,
+                    "name": "Amsterdam Airport Schiphol",
+                    "id": "AMS"
+                },
+                {
+                    "duration": 155,
+                    "name": "Singapore Changi Airport",
+                    "id": "SIN"
+                }
+            ],
+            "total_duration": 1285,
+            "carbon_emissions": {
+                "typical_for_this_route": 677000
+            },
+            "price": 1154,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/multi.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFaEpMVERNeE9IeExURGd6Tlh4TlNEY3lNeklhQ3dpM2hRY1FBaG9EUlZWU09CeHd6cUFJIixbWyJFSU4iLCIyMDI2LTA0LTI4IiwiQU1TIixudWxsLCJLTCIsIjMxOCJdLFsiQU1TIiwiMjAyNi0wNC0yOCIsIlNJTiIsbnVsbCwiS0wiLCI4MzUiXSxbIlNJTiIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIk1IIiwiNzIzMiJdXV0="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 15:55"
+                    },
+                    "arrival_airport": {
+                        "name": "King Abdulaziz International Airport",
+                        "id": "JED",
+                        "time": "2026-04-28 22:45"
+                    },
+                    "duration": 350,
+                    "airplane": "Boeing 787",
+                    "airline": "Saudia",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SV 214",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 254 kg"
+                    ],
+                    "often_delayed_by_over_30_min": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "King Abdulaziz International Airport",
+                        "id": "JED",
+                        "time": "2026-04-29 01:55"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 15:55"
+                    },
+                    "duration": 540,
+                    "airplane": "Boeing 787",
+                    "airline": "Saudia",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+                    "travel_class": "Economy",
+                    "flight_number": "SV 834",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 358 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 190,
+                    "name": "King Abdulaziz International Airport",
+                    "id": "JED"
+                }
+            ],
+            "total_duration": 1080,
+            "carbon_emissions": {
+                "this_flight": 613000,
+                "typical_for_this_route": 677000,
+                "difference_percent": -9
+            },
+            "price": 1359,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/SV.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RUVmpJeE5IeFRWamd6TkJvTENMaWxDQkFDR2dORlZWSTRISENWM0FrPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkpFRCIsbnVsbCwiU1YiLCIyMTQiXSxbIkpFRCIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIlNWIiwiODM0Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 15:25"
+                    },
+                    "arrival_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2026-04-29 00:55"
+                    },
+                    "duration": 450,
+                    "airplane": "Airbus A380",
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "EK 148",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 364 kg"
+                    ],
+                    "often_delayed_by_over_30_min": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Dubai International Airport",
+                        "id": "DXB",
+                        "time": "2026-04-29 03:10"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 14:25"
+                    },
+                    "duration": 435,
+                    "airplane": "Airbus A380",
+                    "airline": "Emirates",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "EK 346",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 383 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 135,
+                    "name": "Dubai International Airport",
+                    "id": "DXB",
+                    "overnight": true
+                }
+            ],
+            "total_duration": 1020,
+            "carbon_emissions": {
+                "this_flight": 748000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 10
+            },
+            "price": 1440,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/EK.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RGU3pFME9IeEZTek0wTmhvTENKN2tDQkFDR2dORlZWSTRISERqcFFvPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkRYQiIsbnVsbCwiRUsiLCIxNDgiXSxbIkRYQiIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIkVLIiwiMzQ2Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 11:15"
+                    },
+                    "arrival_airport": {
+                        "name": "Istanbul Airport",
+                        "id": "IST",
+                        "time": "2026-04-28 15:45"
+                    },
+                    "duration": 210,
+                    "airplane": "Boeing 787",
+                    "airline": "Turkish Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "TK 1952",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 148 kg"
+                    ]
+                },
+                {
+                    "departure_airport": {
+                        "name": "Istanbul Airport",
+                        "id": "IST",
+                        "time": "2026-04-28 16:50"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 08:10"
+                    },
+                    "duration": 620,
+                    "airplane": "Airbus A350",
+                    "airline": "Turkish Airlines",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+                    "travel_class": "Economy",
+                    "flight_number": "TK 62",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 540 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 65,
+                    "name": "Istanbul Airport",
+                    "id": "IST"
+                }
+            ],
+            "total_duration": 895,
+            "carbon_emissions": {
+                "this_flight": 690000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 2
+            },
+            "price": 1714,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/TK.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3RVU3pFNU5USjhWRXMyTWhvTENNcTZDaEFDR2dORlZWSTRISENDb1F3PSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIklTVCIsbnVsbCwiVEsiLCIxOTUyIl0sWyJJU1QiLCIyMDI2LTA0LTI4IiwiS1VMIixudWxsLCJUSyIsIjYyIl1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 13:20"
+                    },
+                    "arrival_airport": {
+                        "name": "Guangzhou Baiyun International Airport",
+                        "id": "CAN",
+                        "time": "2026-04-29 06:40"
+                    },
+                    "duration": 680,
+                    "airplane": "Airbus A350",
+                    "airline": "China Southern",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+                    "travel_class": "Economy",
+                    "flight_number": "CZ 308",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 590 kg"
+                    ],
+                    "overnight": true
+                },
+                {
+                    "departure_airport": {
+                        "name": "Guangzhou Baiyun International Airport",
+                        "id": "CAN",
+                        "time": "2026-04-29 08:30"
+                    },
+                    "arrival_airport": {
+                        "name": "Kuala Lumpur International Airport",
+                        "id": "KUL",
+                        "time": "2026-04-29 12:45"
+                    },
+                    "duration": 255,
+                    "airplane": "Airbus A350",
+                    "airline": "China Southern",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+                    "travel_class": "Economy",
+                    "flight_number": "CZ 349",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "In-seat USB outlet",
+                        "On-demand video",
+                        "Carbon emissions estimate: 224 kg"
+                    ]
+                }
+            ],
+            "layovers": [
+                {
+                    "duration": 110,
+                    "name": "Guangzhou Baiyun International Airport",
+                    "id": "CAN"
+                }
+            ],
+            "total_duration": 1045,
+            "carbon_emissions": {
+                "this_flight": 814000,
+                "typical_for_this_route": 677000,
+                "difference_percent": 20
+            },
+            "price": 9012,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CZ.png",
+            "departure_token": "WyJDalJJTmxrMGIycG5ha1pVU2xGQlFURkxOSGRDUnkwdExTMHRMUzB0TFc5NVozQXlOVUZCUVVGQlIyNTJNRXB2VG5GWVMzVkJFZ3REV2pNd09IeERXak0wT1JvTENKV0FOeEFDR2dORlZWSTRISENRdkVBPSIsW1siQU1TIiwiMjAyNi0wNC0yOCIsIkNBTiIsbnVsbCwiQ1oiLCIzMDgiXSxbIkNBTiIsIjIwMjYtMDQtMjkiLCJLVUwiLG51bGwsIkNaIiwiMzQ5Il1dXQ=="
+        }
+    ],
+    "airports": [
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "KUL",
+                        "name": "Kuala Lumpur International Airport"
+                    },
+                    "city": "Federal Territory of Kuala Lumpur",
+                    "country": "Malaysia",
+                    "country_code": "MY",
+                    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQuSowhmCX7QqSGamT-j9yhwXPTaraV6ISXEsVKK5bKJysodBoAoLC5f586JXkNcYhWIQztMltZEVotRg",
+                    "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTaNgAT-mmythI0-3sA253R7rQp009OelCkOUiBd-uzB295hyXJe0GOOdGBsIhM7qslGYFktf2thAaVr-pHHe7IUy0RbYnAsS4Pbt9PNZE"
+                }
+            ]
+        },
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "KUL",
+                        "name": "Kuala Lumpur International Airport"
+                    },
+                    "city": "Federal Territory of Kuala Lumpur",
+                    "country": "Malaysia",
+                    "country_code": "MY",
+                    "image": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQuSowhmCX7QqSGamT-j9yhwXPTaraV6ISXEsVKK5bKJysodBoAoLC5f586JXkNcYhWIQztMltZEVotRg",
+                    "thumbnail": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTaNgAT-mmythI0-3sA253R7rQp009OelCkOUiBd-uzB295hyXJe0GOOdGBsIhM7qslGYFktf2thAaVr-pHHe7IUy0RbYnAsS4Pbt9PNZE"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ]
+        }
+    ]
+},
+{
+    "search_metadata": {
+        "id": "69efd76a8ffd7b45fc232a02",
+        "status": "Success",
+        "json_endpoint": "https://serpapi.com/searches/aNk-j6aM4YL1kM0m5L58qg/69efd76a8ffd7b45fc232a02.json",
+        "created_at": "2026-04-27 21:38:50 UTC",
+        "processed_at": "2026-04-27 21:38:50 UTC",
+        "google_flights_url": "https://www.google.com/travel/flights?hl=en&gl=us&curr=EUR&tfs=CBwQAhopEgoyMDI2LTA0LTI4KABqBwgBEgNBTVNqBwgBEgNFSU5yBwgBEgNIS0caKRIKMjAyNi0xMC0yNSgAagcIARIDSEtHcgcIARIDQU1TcgcIARIDRUlOQAFIAXABmAEB&tfu=EgIIAQ",
+        "raw_html_file": "https://serpapi.com/searches/aNk-j6aM4YL1kM0m5L58qg/69efd76a8ffd7b45fc232a02.html",
+        "prettify_html_file": "https://serpapi.com/searches/aNk-j6aM4YL1kM0m5L58qg/69efd76a8ffd7b45fc232a02.prettify",
+        "total_time_taken": 9.05
+    },
+    "search_parameters": {
+        "engine": "google_flights",
+        "hl": "en",
+        "gl": "us",
+        "type": "1",
+        "departure_id": "AMS,EIN",
+        "arrival_id": "HKG",
+        "outbound_date": "2026-04-28",
+        "return_date": "2026-10-25",
+        "adults": 1,
+        "stops": 1,
+        "currency": "EUR"
+    },
+    "other_flights": [
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 21:15"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 15:25"
+                    },
+                    "duration": 730,
+                    "airplane": "Boeing 787",
+                    "airline": "KLM",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+                    "travel_class": "Economy",
+                    "flight_number": "KL 887",
+                    "legroom": "31 in",
+                    "extensions": [
+                        "Average legroom (31 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 532 kg"
+                    ],
+                    "overnight": true
+                }
+            ],
+            "total_duration": 730,
+            "carbon_emissions": {
+                "this_flight": 533000,
+                "typical_for_this_route": 679000,
+                "difference_percent": -22
+            },
+            "price": 1164,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/KL.png",
+            "departure_token": "WyJDalJJU1hOUWJIWnFWbTlFVmxsQlFWTnNka0ZDUnkwdExTMHRMUzB0Y0daaVpXY3hNMEZCUVVGQlIyNTJNVEk0U2xSUmFuTkJFZ1ZMVERnNE54b0xDS1dOQnhBQ0dnTkZWVkk0SEhEMXFRZz0iLFtbIkFNUyIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIktMIiwiODg3Il1dXQ=="
+        },
+        {
+            "flights": [
+                {
+                    "departure_airport": {
+                        "name": "Amsterdam Airport Schiphol",
+                        "id": "AMS",
+                        "time": "2026-04-28 12:20"
+                    },
+                    "arrival_airport": {
+                        "name": "Hong Kong International Airport",
+                        "id": "HKG",
+                        "time": "2026-04-29 06:10"
+                    },
+                    "duration": 710,
+                    "airplane": "Airbus A350",
+                    "airline": "Cathay Pacific",
+                    "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+                    "travel_class": "Economy",
+                    "flight_number": "CX 270",
+                    "legroom": "32 in",
+                    "extensions": [
+                        "Above average legroom (32 in)",
+                        "Wi-Fi for a fee",
+                        "In-seat power & USB outlets",
+                        "On-demand video",
+                        "Carbon emissions estimate: 543 kg"
+                    ],
+                    "overnight": true,
+                    "often_delayed_by_over_30_min": true
+                }
+            ],
+            "total_duration": 710,
+            "carbon_emissions": {
+                "this_flight": 543000,
+                "typical_for_this_route": 679000,
+                "difference_percent": -20
+            },
+            "price": 1552,
+            "type": "Round trip",
+            "airline_logo": "https://www.gstatic.com/flights/airline_logos/70px/CX.png",
+            "departure_token": "WyJDalJJU1hOUWJIWnFWbTlFVmxsQlFWTnNka0ZDUnkwdExTMHRMUzB0Y0daaVpXY3hNMEZCUVVGQlIyNTJNVEk0U2xSUmFuTkJFZ1ZEV0RJM01Cb0xDSkc4Q1JBQ0dnTkZWVkk0SEhEMmpBcz0iLFtbIkFNUyIsIjIwMjYtMDQtMjgiLCJIS0ciLG51bGwsIkNYIiwiMjcwIl1dXQ=="
+        }
+    ],
+    "airports": [
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "HKG",
+                        "name": "Hong Kong International Airport"
+                    },
+                    "city": "Hong Kong",
+                    "country": "Hong Kong",
+                    "country_code": "HK",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTw4hL1mr5guduTOGdOZwJz3LPKCJ8gVMJLLysC52ardcvQF9spfxCgjmth1tgFQt9LV8udbc5Sx0Gl0w",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMxMT46WfJjHYcOn3hqaJwQlDG9VSOAYYXPljq4w715PQkzgI3hblNxB_Ti-7Fbd5PlijETzi2xeiOC0Sno3Ya2EjCFZy6rGgWLo1Y1Y4"
+                }
+            ]
+        },
+        {
+            "departure": [
+                {
+                    "airport": {
+                        "id": "HKG",
+                        "name": "Hong Kong International Airport"
+                    },
+                    "city": "Hong Kong",
+                    "country": "Hong Kong",
+                    "country_code": "HK",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTw4hL1mr5guduTOGdOZwJz3LPKCJ8gVMJLLysC52ardcvQF9spfxCgjmth1tgFQt9LV8udbc5Sx0Gl0w",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMxMT46WfJjHYcOn3hqaJwQlDG9VSOAYYXPljq4w715PQkzgI3hblNxB_Ti-7Fbd5PlijETzi2xeiOC0Sno3Ya2EjCFZy6rGgWLo1Y1Y4"
+                }
+            ],
+            "arrival": [
+                {
+                    "airport": {
+                        "id": "AMS",
+                        "name": "Amsterdam Airport Schiphol"
+                    },
+                    "city": "Amsterdam",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRTHETZVxU4_OrKq24sf7n7HS_0ca3__1_Urs251dzMXLn16tZy8J8x5i1phGimLkrbGL2gDKGrA-U35g",
+                    "thumbnail": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRiH-EGCc5jbyYbopiqf-g80xO0O5pxPnlJESLyIsY2uvo-gB84S94Q4C9kNWoKQ_eQ3OU-6evapBnb7TquB4zg3p3fQEGA3wpbxxhRdx0"
+                },
+                {
+                    "airport": {
+                        "id": "EIN",
+                        "name": "Eindhoven Airport"
+                    },
+                    "city": "Eindhoven",
+                    "country": "Netherlands",
+                    "country_code": "NL",
+                    "image": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRoeHS9R1-7XD4FHm6LBHTsNXDjj5mKGmF0XJpliZC0f0-9Dd_7heEfYGkG_9LhxS-vJC3xBVfcyIM9Pw",
+                    "thumbnail": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQN2L-Hbn8MWEu5XYCfxxDcmwGbOtMrX9qHpz2fPELPwQZqhbTkIDsQmLdQoqT_XUFz53XWSTYW5dTjoN8cdRFXi26p31V5yeYAkkn_NUo"
+                }
+            ]
+        }
+    ]
+}
