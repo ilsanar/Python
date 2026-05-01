@@ -1,0 +1,2 @@
+AV_api=O3BT2YNCPQM5PGFC
+Open_news_api=da9ca7643fbb474a93a7e4e1b034d607
