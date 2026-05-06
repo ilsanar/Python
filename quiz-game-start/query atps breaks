@@ -1,0 +1,321 @@
+USE [GPCEOLTP];
+GO
+SET ANSI_NULLS ON;
+GO
+SET QUOTED_IDENTIFIER ON;
+GO
+
+CREATE OR ALTER VIEW dbo.vw_WorkedHours_Today
+AS
+/* =========================
+   USTAWIENIA I KONSTANTY
+   ========================= */
+WITH Const AS (
+    SELECT
+        CAST(SYSDATETIME() AS date) AS Today,         -- "dziś" jako data
+        SYSDATETIME()               AS NowDt,         -- jeden "teraz" do ucinania
+        CAST(45 AS int)             AS CapNearestMin  -- limit dla F1 (NEAREST), w minutach
+),
+/* =========================
+   WYCINAMY TYLKO DZISIEJSZE TRANSAKCJE
+   ========================= */
+BaseToday AS (
+    SELECT t.*, c.Today, c.NowDt, c.CapNearestMin
+    FROM dbo.ATPS_TRANSACTIONS t
+    CROSS JOIN Const c
+    WHERE t.DISPLAYDATE = c.Today                      -- SARG: tnij na wejściu
+),
+/* =========================
+   SEGMENTY PRACY (jak u Ciebie, tylko today)
+   ========================= */
+Ordered AS (
+    SELECT
+        b.*,
+        LEAD(b.FROMCALCDT) OVER (
+            PARTITION BY b.EMPID, b.DISPLAYDATE
+            ORDER BY b.FROMCALCDT, b.TILLCALCDT, b.BookingId
+        ) AS next_from
+    FROM BaseToday b
+),
+Segments AS (
+    SELECT
+        o.*,
+        CASE
+            WHEN o.next_from IS NOT NULL THEN o.next_from
+            ELSE COALESCE(o.TILLCALCDT, o.TILLDATETIME, o.FROMCALCDT, o.NowDt)
+        END AS segment_end
+    FROM Ordered o
+),
+/* =========================
+   PIERWSZY CLOCK-IN DNIA (pod dopasowanie zakresu)
+   ========================= */
+FirstClock AS (
+    SELECT EMPID, DISPLAYDATE, MIN(FROMCALCDT) AS first_from
+    FROM Segments
+    GROUP BY EMPID, DISPLAYDATE
+),
+/* =========================
+   KANDYDACI ZAKRESÓW DLA KAŻDEGO SEGMENTU (F1: DIRECT lub NEAREST)
+   ========================= */
+RangeCandidates AS (
+    SELECT
+        s.EMPID, s.DISPLAYDATE, s.DEPARTMENT, s.PROCESS, s.ABSENCEID,
+        s.FROMCALCDT, s.segment_end, s.NowDt, s.CapNearestMin,
+        CAST(fc.first_from AS time) AS first_clock_time,
+        dbr.START_MIN, dbr.START_MAX,
+        dbr.BRAKE1_START, dbr.BRAKE1_END,
+        dbr.BRAKE2_START, dbr.BRAKE2_END,
+        dbr.BRAKE3_START, dbr.BRAKE3_END,
+        dbr.IS_CLOCKING_BRAKE,
+        -- trafienie twarde w przedział
+        CASE WHEN CAST(fc.first_from AS time) BETWEEN dbr.START_MIN AND dbr.START_MAX
+             THEN 1 ELSE 0 END AS is_direct_hit,
+        -- środek zakresu (sekundy od północy)
+        (DATEDIFF(SECOND, '00:00:00', dbr.START_MIN) + DATEDIFF(SECOND, '00:00:00', dbr.START_MAX)) / 2 AS center_sec,
+        -- różnica do środka zakresu w minutach (wartość bezwzględna)
+        ABS(DATEDIFF(MINUTE,
+            CAST(fc.first_from AS time),
+            DATEADD(SECOND,
+                    (DATEDIFF(SECOND, '00:00:00', dbr.START_MIN) + DATEDIFF(SECOND, '00:00:00', dbr.START_MAX)) / 2,
+                    CAST('00:00:00' AS time))
+        )) AS diff_to_center_min
+    FROM Segments s
+    LEFT JOIN FirstClock fc
+      ON fc.EMPID = s.EMPID AND fc.DISPLAYDATE = s.DISPLAYDATE
+    LEFT JOIN dbo.DepartmentBreaksRange dbr
+      ON dbr.DEPARTMENT = s.DEPARTMENT
+),
+/* =========================
+   WYBÓR POJEDYNCZEGO ZAKRESU (preferuj DIRECT, inaczej NEAREST <= cap)
+   ========================= */
+SelectedRange AS (
+    SELECT *
+    FROM (
+        SELECT
+            rc.*,
+            ROW_NUMBER() OVER (
+                PARTITION BY rc.EMPID, rc.DISPLAYDATE, rc.FROMCALCDT, rc.segment_end
+                ORDER BY
+                    rc.is_direct_hit DESC,       -- najpierw DIRECT
+                    rc.diff_to_center_min ASC    -- potem najbliższy środek
+            ) AS rn
+        FROM RangeCandidates rc
+        WHERE rc.is_direct_hit = 1
+           OR rc.diff_to_center_min <= rc.CapNearestMin
+    ) x
+    WHERE x.rn = 1
+),
+/* =========================
+   OKNA PRZERW DLA WYBRANEGO ZAKRESU (F1)
+   ========================= */
+F1_BreakWindows AS (
+    SELECT
+        sr.EMPID, sr.DISPLAYDATE, sr.DEPARTMENT, sr.PROCESS, sr.ABSENCEID,
+        sr.FROMCALCDT, sr.segment_end, sr.NowDt,
+        sr.IS_CLOCKING_BRAKE,
+        1 AS brk_no,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE1_START), CAST(sr.DISPLAYDATE AS datetime)) AS brk_start_dt,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE1_END),   CAST(sr.DISPLAYDATE AS datetime)) AS brk_end_dt
+    FROM SelectedRange sr
+    WHERE sr.BRAKE1_START IS NOT NULL AND sr.BRAKE1_END IS NOT NULL
+    UNION ALL
+    SELECT
+        sr.EMPID, sr.DISPLAYDATE, sr.DEPARTMENT, sr.PROCESS, sr.ABSENCEID,
+        sr.FROMCALCDT, sr.segment_end, sr.NowDt,
+        sr.IS_CLOCKING_BRAKE,
+        2,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE2_START), CAST(sr.DISPLAYDATE AS datetime)),
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE2_END),   CAST(sr.DISPLAYDATE AS datetime))
+    FROM SelectedRange sr
+    WHERE sr.BRAKE2_START IS NOT NULL AND sr.BRAKE2_END IS NOT NULL
+    UNION ALL
+    SELECT
+        sr.EMPID, sr.DISPLAYDATE, sr.DEPARTMENT, sr.PROCESS, sr.ABSENCEID,
+        sr.FROMCALCDT, sr.segment_end, sr.NowDt,
+        sr.IS_CLOCKING_BRAKE,
+        3,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE3_START), CAST(sr.DISPLAYDATE AS datetime)),
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', sr.BRAKE3_END),   CAST(sr.DISPLAYDATE AS datetime))
+    FROM SelectedRange sr
+    WHERE sr.BRAKE3_START IS NOT NULL AND sr.BRAKE3_END IS NOT NULL
+),
+/* =========================
+   F3: SKONSOLIDOWANE OKNA PRZERW PER DZIAŁ (bez przypisania zakresu)
+   – tylko działy, które faktycznie dziś występują
+   ========================= */
+DeptSet AS (
+    SELECT DISTINCT DEPARTMENT, DISPLAYDATE
+    FROM Segments
+),
+DeptAllWindows AS (
+    SELECT
+        d.DEPARTMENT, d.DISPLAYDATE,
+        r.IS_CLOCKING_BRAKE,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE1_START), CAST(d.DISPLAYDATE AS datetime)) AS brk_start_dt,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE1_END),   CAST(d.DISPLAYDATE AS datetime)) AS brk_end_dt
+    FROM DeptSet d
+    JOIN dbo.DepartmentBreaksRange r
+      ON r.DEPARTMENT = d.DEPARTMENT
+    WHERE r.BRAKE1_START IS NOT NULL AND r.BRAKE1_END IS NOT NULL
+    UNION ALL
+    SELECT
+        d.DEPARTMENT, d.DISPLAYDATE, r.IS_CLOCKING_BRAKE,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE2_START), CAST(d.DISPLAYDATE AS datetime)),
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE2_END),   CAST(d.DISPLAYDATE AS datetime))
+    FROM DeptSet d
+    JOIN dbo.DepartmentBreaksRange r
+      ON r.DEPARTMENT = d.DEPARTMENT
+    WHERE r.BRAKE2_START IS NOT NULL AND r.BRAKE2_END IS NOT NULL
+    UNION ALL
+    SELECT
+        d.DEPARTMENT, d.DISPLAYDATE, r.IS_CLOCKING_BRAKE,
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE3_START), CAST(d.DISPLAYDATE AS datetime)),
+        DATEADD(SECOND, DATEDIFF(SECOND, '00:00:00', r.BRAKE3_END),   CAST(d.DISPLAYDATE AS datetime))
+    FROM DeptSet d
+    JOIN dbo.DepartmentBreaksRange r
+      ON r.DEPARTMENT = d.DEPARTMENT
+    WHERE r.BRAKE3_START IS NOT NULL AND r.BRAKE3_END IS NOT NULL
+),
+-- porządkujemy i scalimy nakładające się okna (gaps & islands)
+DeptWindowsOrdered AS (
+    SELECT
+        w.*,
+        LAG(w.brk_start_dt) OVER (PARTITION BY w.DEPARTMENT, w.DISPLAYDATE ORDER BY w.brk_start_dt) AS prev_start,
+        MAX(w.brk_end_dt) OVER (PARTITION BY w.DEPARTMENT, w.DISPLAYDATE
+                                ORDER BY w.brk_start_dt
+                                ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING) AS prev_cummax_end
+    FROM DeptAllWindows w
+),
+DeptWindowsGrouped AS (
+    SELECT
+        dwo.*,
+        -- nowa wyspa, jeśli obecny start > dotychczasowe maksimum końców
+        SUM(CASE WHEN dwo.prev_cummax_end IS NULL OR dwo.brk_start_dt > dwo.prev_cummax_end THEN 1 ELSE 0 END)
+          OVER (PARTITION BY dwo.DEPARTMENT, dwo.DISPLAYDATE ORDER BY dwo.brk_start_dt) AS grp
+    FROM DeptWindowsOrdered dwo
+),
+DeptWindowsMerged AS (
+    SELECT
+        DEPARTMENT, DISPLAYDATE, grp,
+        MIN(brk_start_dt) AS brk_start_dt,
+        MAX(brk_end_dt)   AS brk_end_dt,
+        -- jeśli w grupie istnieje choć jedno IS_CLOCKING_BRAKE=0, traktujemy grupę jako "odejmowaną"
+        MAX(CASE WHEN IS_CLOCKING_BRAKE = 0 THEN 1 ELSE 0 END) AS any_nonclocking
+    FROM DeptWindowsGrouped
+    GROUP BY DEPARTMENT, DISPLAYDATE, grp
+),
+F3_BreakWindows AS (
+    SELECT
+        d.DEPARTMENT, d.DISPLAYDATE,
+        d.brk_start_dt, d.brk_end_dt
+    FROM DeptWindowsMerged d
+    WHERE d.any_nonclocking = 1  -- tylko działy, gdzie przerwy nie są nabijane na zegarze
+),
+/* =========================
+   OVERLAPY I SUMY PRZERW PER SEGMENT
+   ========================= */
+-- F1: przerwy z wybranego zakresu (DIRECT/NEAREST)
+F1_PerSegmentBreak AS (
+    SELECT
+        s.EMPID, s.DISPLAYDATE, s.DEPARTMENT, s.PROCESS, s.ABSENCEID,
+        s.FROMCALCDT, s.segment_end,
+        CASE
+          WHEN s.IS_CLOCKING_BRAKE = 1 THEN 0
+          ELSE
+            CASE
+              WHEN s.segment_end <= w.brk_start_dt OR s.FROMCALCDT >= CASE WHEN s.NowDt < w.brk_end_dt THEN s.NowDt ELSE w.brk_end_dt END
+                THEN 0
+              ELSE DATEDIFF(SECOND,
+                            CASE WHEN s.FROMCALCDT > w.brk_start_dt THEN s.FROMCALCDT ELSE w.brk_start_dt END,
+                            CASE WHEN s.segment_end  < CASE WHEN s.NowDt < w.brk_end_dt THEN s.NowDt ELSE w.brk_end_dt END
+                                 THEN s.segment_end
+                                 ELSE CASE WHEN s.NowDt < w.brk_end_dt THEN s.NowDt ELSE w.brk_end_dt END
+                            END)
+            END
+        END AS BreakSeconds
+    FROM F1_BreakWindows w
+    JOIN SelectedRange s
+      ON s.EMPID = w.EMPID AND s.DISPLAYDATE = w.DISPLAYDATE
+     AND s.DEPARTMENT = w.DEPARTMENT AND s.FROMCALCDT = w.FROMCALCDT AND s.segment_end = w.segment_end
+),
+-- F3: przerwy skonsolidowane działu, gdy nie wybrano żadnego zakresu
+NoSelectedRange AS (
+    SELECT
+        s.EMPID, s.DISPLAYDATE, s.DEPARTMENT, s.PROCESS, s.ABSENCEID,
+        s.FROMCALCDT, s.segment_end, s.NowDt
+    FROM Segments s
+    LEFT JOIN SelectedRange sr
+      ON sr.EMPID = s.EMPID AND sr.DISPLAYDATE = s.DISPLAYDATE
+     AND sr.FROMCALCDT = s.FROMCALCDT AND sr.segment_end = s.segment_end
+    WHERE sr.EMPID IS NULL   -- brak DIRECT/NEAREST
+),
+F3_PerSegmentBreak AS (
+    SELECT
+        ns.EMPID, ns.DISPLAYDATE, ns.DEPARTMENT, ns.PROCESS, ns.ABSENCEID,
+        ns.FROMCALCDT, ns.segment_end,
+        -- w F3 przerwy odejmujemy tylko jeśli dany dział w ogóle ma nie-clockowane przerwy (wybraliśmy te okna wyżej)
+        CASE
+          WHEN ns.segment_end <= d.brk_start_dt OR ns.FROMCALCDT >= CASE WHEN ns.NowDt < d.brk_end_dt THEN ns.NowDt ELSE d.brk_end_dt END
+            THEN 0
+          ELSE DATEDIFF(SECOND,
+                        CASE WHEN ns.FROMCALCDT > d.brk_start_dt THEN ns.FROMCALCDT ELSE d.brk_start_dt END,
+                        CASE WHEN ns.segment_end  < CASE WHEN ns.NowDt < d.brk_end_dt THEN ns.NowDt ELSE d.brk_end_dt END
+                             THEN ns.segment_end
+                             ELSE CASE WHEN ns.NowDt < d.brk_end_dt THEN ns.NowDt ELSE d.brk_end_dt END
+                        END)
+        END AS BreakSeconds
+    FROM NoSelectedRange ns
+    JOIN F3_BreakWindows d
+      ON d.DEPARTMENT = ns.DEPARTMENT AND d.DISPLAYDATE = ns.DISPLAYDATE
+),
+BreaksAgg AS (
+    SELECT EMPID, DISPLAYDATE, FROMCALCDT, segment_end,
+           SUM(BreakSeconds) AS BreaksOnSegmentSeconds
+    FROM (
+        SELECT * FROM F1_PerSegmentBreak
+        UNION ALL
+        SELECT * FROM F3_PerSegmentBreak
+    ) z
+    GROUP BY EMPID, DISPLAYDATE, FROMCALCDT, segment_end
+),
+/* =========================
+   GODZINY PRACY = BAZA – PRZERWY
+   ========================= */
+Worked AS (
+    SELECT
+        s.EMPID, s.[NAAM], s.[VOORNAAM], s.[PASNUMMER], s.[AGENCY],
+        s.DISPLAYDATE, s.DEPARTMENT, s.PROCESS, s.[ABSENCEID],
+        s.FROMCALCDT, s.segment_end,
+        BaseWorkedSeconds =
+            CASE
+                WHEN s.[ABSENCEID] NOT IN (1,4) OR DATEPART(HOUR, s.FROMCALCDT) BETWEEN 1 AND 5 THEN 0
+                ELSE CASE WHEN DATEDIFF(SECOND, s.FROMCALCDT, s.segment_end) < 0 THEN 0
+                          ELSE DATEDIFF(SECOND, s.FROMCALCDT, s.segment_end) END
+            END,
+        COALESCE(ba.BreaksOnSegmentSeconds, 0) AS BreaksOnSegmentSeconds
+    FROM Segments s
+    LEFT JOIN BreaksAgg ba
+      ON ba.EMPID = s.EMPID AND ba.DISPLAYDATE = s.DISPLAYDATE
+     AND ba.FROMCALCDT = s.FROMCALCDT AND ba.segment_end = s.segment_end
+)
+SELECT
+    w.EMPID,
+    w.[NAAM],
+    w.[VOORNAAM],
+    w.[PASNUMMER],
+    w.[AGENCY],
+    w.DISPLAYDATE                         AS WorkDate,
+    COALESCE(w.DEPARTMENT, N'(none)')     AS DEPARTMENT,
+    COALESCE(w.PROCESS,    N'(none)')     AS PROCESS,
+    CAST(SUM(
+         CASE WHEN w.[ABSENCEID] IN (1,4)
+              THEN CASE WHEN w.BaseWorkedSeconds <= w.BreaksOnSegmentSeconds THEN 0
+                        ELSE w.BaseWorkedSeconds - w.BreaksOnSegmentSeconds END
+              ELSE 0
+         END
+    ) / 3600.0 AS DECIMAL(12,2)) AS WorkedHoursDecimal
+FROM Worked w
+GROUP BY
+    w.EMPID, w.[NAAM], w.[VOORNAAM], w.[PASNUMMER], w.[AGENCY],
+    w.DISPLAYDATE, COALESCE(w.DEPARTMENT, N'(none)'), COALESCE(w.PROCESS, N'(none)');
+GO
